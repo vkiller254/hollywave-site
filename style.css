@@ -369,38 +369,68 @@ textarea:focus {
 /* Social icons */
 .fa-facebook {
   font-size: 1.875rem;
-  color: #1877f2;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  color: #1877f2; /* official Facebook blue */
   display: inline-block;
-  filter: drop-shadow(0 0.25rem 0.5rem rgba(0,0,0,0.25));
+  transition: transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
+  text-shadow: 0 0 4px rgba(24, 119, 242, 0.4);
 }
+
 .fa-facebook:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0.375rem 0.875rem rgba(0,0,0,0.35));
-  color: #0e5ad1;
+  transform: scale(1.15);
+  color: #1877f2;
+  text-shadow:
+    0 0 6px rgba(24, 119, 242, 0.6),
+    0 0 12px rgba(14, 90, 209, 0.5);
 }
 .fa-instagram {
   font-size: 1.875rem;
-  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  background: radial-gradient(circle at 30% 107%, 
+    #fdf497 0%,  /* yellow */
+    #fdf497 5%, 
+    #fd5949 45%, /* orange-red */
+    #d6249f 60%, /* pink-purple */
+    #285AEB 90%  /* deep blue */
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
   transition: transform 0.3s ease, filter 0.3s ease;
-  filter: drop-shadow(0 0.25rem 0.5rem rgba(0,0,0,0.25));
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.25));
 }
+
 .fa-instagram:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0.375rem 0.875rem rgba(0,0,0,0.35));
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(214, 36, 159, 0.6))
+          drop-shadow(0 0 16px rgba(253, 89, 73, 0.4));
 }
 .fa-x-twitter {
-  font-size: 1.875rem;
-  color: #000;
-  transition: transform 0.3s ease, filter 0.3s ease, color 0.3s ease;
-  filter: drop-shadow(0 0.25rem 0.5rem rgba(0,0,0,0.25));
+  font-size: 1.875rem; /* same size as others */
+  color: #000; /* X logo base */
   display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
 .fa-x-twitter:hover {
-  transform: scale(1.1);
-  color: #1DA1F2;
-  filter: drop-shadow(0 0.375rem 0.875rem rgba(0,0,0,0.35));
+  transform: scale(1.15);
+  color: #1DA1F2; /* Twitter blue glow */
+  text-shadow:
+    0 0 6px rgba(29, 161, 242, 0.6),
+    0 0 12px rgba(29, 161, 242, 0.4);
+}
+.fa-tiktok {
+  font-size: 30px;
+  color: #000; /* base black icon */
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  text-shadow:
+    2px 2px 0 #FE2C55,   /* red offset shadow */
+    -2px -2px 0 #25F4EE; /* cyan offset shadow */
+}
+
+.fa-tiktok:hover {
+  transform: scale(1.15);
+  text-shadow:
+    3px 3px 6px #FE2C55,
+    -3px -3px 6px #25F4EE;
 }
