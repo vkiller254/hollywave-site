@@ -100,7 +100,27 @@ body{
   outline:none;
   box-shadow:var(--accent-glow);
 }
-
+.secondary-nav ul{
+  display:flex;
+  gap:12px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.secondary-nav a{
+  display:inline-block;
+  padding:10px 12px;
+  color:var(--text);
+  text-decoration:none;
+  border-radius:8px;
+  font-size:0.95rem;
+}
+.secondary-nav a:focus,
+.secondary-nav a:hover{
+  background: linear-gradient(90deg, rgba(225,6,0,0.06), rgba(0,0,0,0.05));
+  outline:none;
+  box-shadow:var(--accent-glow);
+}
 /* Hamburger for small screens */
 .nav-toggle{
   display:none;
@@ -249,16 +269,48 @@ body{
   grid-template-columns: repeat(2, 1fr);
   margin-top:12px;
 }
-.gallery-item{
-  border-radius:8px;
-  padding:0;
-  border:none;
-  overflow:hidden;
-  background:transparent;
-  cursor:pointer;
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
-.gallery-item img{ width:100%; height:140px; object-fit:cover; display:block; }
 
+/* Individual gallery items */
+.gallery-item {
+  background: rgba(0, 0, 0, 0.6); /* glassmorphism effect */
+  padding: 0.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover,
+.gallery-item:focus {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #ff0000aa; /* red glow effect */
+}
+
+/* Images & video */
+.gallery-item img,
+.gallery-item video {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Captions */
+.gallery-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+/* Video specific adjustments */
+.video-item video {
+  max-height: 300px;
+  object-fit: cover;
+}
 /* Lightbox */
 .lightbox{
   position:fixed;
@@ -396,5 +448,53 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus{
 /* Utility */
 .muted{ color:var(--muted); font-size:0.95rem; }
 .lead{ color:var(--muted); }
+/*v-role*/
+#v-role{
+  background-color: #1c1c1c;
+}
+#v-availability{
+  background-color: #1c1c1c;
+}
+.fa-facebook {
+  font-size: 30px; /* adjust size as needed */
+  color: #1877f2; /* official Facebook blue */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  display: inline-block;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+}
+
+.fa-facebook:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35));
+  color: #0e5ad1; /* darker shade on hover */
+}
+
+.fa-instagram {
+  font-size: 30px; /* change size as needed */
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+}
+
+.fa-instagram:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35));
+}
+.fa-x-twitter {
+  font-size: 30px; /* adjust size as needed */
+  color: #000; /* solid black, classic X look */
+  transition: transform 0.3s ease, filter 0.3s ease, color 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+  display: inline-block;
+}
+
+.fa-x-twitter:hover {
+  transform: scale(1.1);
+  color: #1DA1F2; /* light blue hover like old Twitter style */
+  filter: drop-shadow(
+}
 
 /* set footer year */
