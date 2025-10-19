@@ -434,3 +434,5 @@ textarea:focus {
     3px 3px 6px #FE2C55,
     -3px -3px 6px #25F4EE;
 }
+body { border: 5px solid red; }
+
