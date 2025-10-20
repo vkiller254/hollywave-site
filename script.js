@@ -123,52 +123,6 @@ function showError(fieldId, message) {
   }
 }
 
-// Volunteer form
-const volunteerForm = $('#volunteerForm');
-if (volunteerForm) {
-  volunteerForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // simple checks
-    const name = $('#v-name').value.trim();
-    const email = $('#v-email').value.trim();
-    let valid = true;
-    if (!name) { showError('v-name', 'Name is required.'); valid = false; } else showError('v-name','');
-    if (!email || !/^\S+@\S+\.\S+$/.test(email)) { showError('v-email','Enter a valid email.'); valid = false; } else showError('v-email','');
-
-    if (!valid) {
-      $('#volunteerResult').textContent = 'Please fix errors and try again.';
-      return;
-    }
-
-    // Simulate success (replace with real submission)
-    $('#volunteerResult').textContent = 'Thanks — we received your volunteer request. We will contact you shortly.';
-    volunteerForm.reset();
-  });
-}
-
-// Contact form
-const contactForm = $('#contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = $('#c-name').value.trim();
-    const email = $('#c-email').value.trim();
-    const message = $('#c-message').value.trim();
-    let valid = true;
-    if (!name) { showError('c-name', 'Name is required.'); valid = false; } else showError('c-name','');
-    if (!email || !/^\S+@\S+\.\S+$/.test(email)) { showError('c-email','Enter a valid email.'); valid = false; } else showError('c-email','');
-    if (!message) { showError('c-message', 'Write a short message.'); valid = false; } else showError('c-message','');
-
-    if (!valid) {
-      $('#contactResult').textContent = 'Please fix errors and try again.';
-      return;
-    }
-
-    // Simulate success (replace with backend)
-    $('#contactResult').textContent = 'Message sent. Thank you — we will reply soon.';
-    contactForm.reset();
-  });
-}
 
 // ---------------------------
 // INTERSECTION OBSERVER: reveal elements on scroll
