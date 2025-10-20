@@ -56,6 +56,28 @@ body {
   gap: 1rem; /* 16px */
   justify-content: space-between;
 }
+#logo {
+  display: block;
+  max-width: 80px;               /* balanced size */
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  opacity: 1;                    /* full visibility */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+#logo:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4))
+          brightness(1.15);      /* slight glow */
+}
+
+@media (max-width: 600px) {
+  #logo {
+    max-width: 60px;
+  }
+}
 
 /* Brand */
 .brand {
@@ -434,5 +456,3 @@ textarea:focus {
     3px 3px 6px #FE2C55,
     -3px -3px 6px #25F4EE;
 }
-body { border: 5px solid red; }
-
